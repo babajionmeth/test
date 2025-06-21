@@ -62,10 +62,13 @@ while true; do
     
     4)
         echo "⬇️ Downloading tunnels for better login..."
+    cd 
+    
     npm install -g localtunnel && \
-    cd ~
-curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-chmod +x cloudflared-linux-amd64 
+    cd 
+    curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+    chmod +x cloudflared-linux-amd64 && \
+    cd rl-swarm-0.4.3 
     echo "✅ Success"
     ;;
     
@@ -76,13 +79,14 @@ chmod +x cloudflared-linux-amd64
         ;;
 
     6)
-        echo "🗑️ Deletion in progress. Make sure you have already backed up your swarm.pem file before deleting the node files.
-The process will start in 10 seconds. To stop, press Ctrl+C."
+        echo "🗑️ Deletion in progress. Make sure you have already backed up your swarm.pem file before deleting the node files."
+        echo "The process will start in 10 seconds. To stop, press Ctrl+C."
         sleep 10 
         sudo rm -rf /root/rl-swarm-0.4.3/
         echo "🗑️ Deletion complete."
         ;;
 
+  
     7)
         echo "👀 You will be logged into the screen in 5 seconds. To exit, press Ctrl+A then D."
     sleep 5

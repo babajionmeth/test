@@ -75,7 +75,7 @@ git submodule update --init
 echo "🔧 Building the node..."
 ;;
     2)
-cargo build --release 
+#cargo build --release 
 sudo cp /root/og-storage-node-one-command-scipt-/0g-storage-node/
 echo "⚙️ Setting up configuration..."
 ;;

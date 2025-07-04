@@ -1,3 +1,3 @@
 ```bash
- clone -O https://raw.githubusercontent.com/babajionmeth/test/main/newgpu.sh && chmod +x newgpu.sh && ./newgpu.sh
+wget https://raw.githubusercontent.com/babajionmeth/test/main/newgpu.sh && chmod +x newgpu.sh && ./newgpu.sh
 ```

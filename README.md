@@ -1,3 +1,22 @@
+```bash
+while true; do
+
+    echo_green ">> Starting swarm trainer..."
+
+    sed -i.bak 's/^\([[:space:]]*\)yarn build/\1# yarn build/' "$ROOT/run_rl_swarm.sh"
+
+    if ! python -m rgym_exp.runner.swarm_launcher \
+        --config-path "$ROOT/rgym_exp/config" \
+        --config-name "rg-swarm.yaml"; then
+        echo_red ">> Swarm trainer exited with error. Restarting in 5 seconds... (Press Ctrl+C to stop)"
+    else
+        echo_green ">> Swarm trainer exited normally. Restarting in 5 seconds... (Press Ctrl+C to stop)"
+    fi
+
+    sed -i -E 's/(startup_timeout: *float *= *)[0-9.]+/\1120/' $(python3 -c "import hivemind.p2p.p2p_daemon as m; print(m.__file__)")
+    sleep 5
+done
+```
 ```bash 
 wget https://github.com/gensyn-ai/rl-swarm/archive/refs/tags/v0.5.5.tar.gz
 ```

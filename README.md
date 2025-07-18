@@ -18,6 +18,13 @@ CUDA_VISIBLE_DEVICES=2 ./run_rl_swarm.sh
 python3 -m venv .venv && source .venv/bin/activate
 ```
 ```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash 
+```
+```bash
+source ~/.bashrc
+```
+
+
 
 
 

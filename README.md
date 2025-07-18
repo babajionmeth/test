@@ -1,3 +1,6 @@
+```bash 
+wget https://github.com/gensyn-ai/rl-swarm/archive/refs/tags/v0.5.5.tar.gz
+```
 ```bash
 git clone https://github.com/babajionmeth/rl-swarm-0.5.5 && cd rl-swarm-0.5.5 && chmod +x run_rl_swarm.sh
 ```

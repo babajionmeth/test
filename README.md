@@ -66,6 +66,10 @@ CREATE DATABASE taskdb OWNER worker;
 ```bash
 sudo cat init_worker.sql | sudo -u postgres /usr/lib/postgresql/16/bin/psql
 ```
+## to start the postergs before the do database command or postsql16
+```bash
+sudo supervisord -c /etc/supervisor/supervisord.conf
+```
 
 
 

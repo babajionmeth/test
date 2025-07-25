@@ -42,6 +42,30 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```bash
 source ~/.bashrc
 ```
+```bash
+grafana-server --homepath=/usr/share/grafana web
+```
+```bash
+-- 1. Create or alter the worker role
+DO
+$$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_roles WHERE rolname = 'worker'
+  ) THEN
+    CREATE ROLE worker LOGIN;
+  END IF;
+  ALTER ROLE worker WITH PASSWORD 'password';
+END
+$$;
+
+-- 2. Create the taskdb database (must be top-level SQL, not inside DO)
+CREATE DATABASE taskdb OWNER worker;
+
+```
+
+
+
 
 
 

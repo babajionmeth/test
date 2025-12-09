@@ -5,7 +5,7 @@ while true; do
 
     sed -i.bak 's/^\([[:space:]]*\)yarn build/\1# yarn build/' "$ROOT/run_rl_swarm.sh"
 
-    if ! python -m rgym_exp.runner.swarm_launcher \
+    if ! python -m code_gen_exp.runner.swarm_launcher \
         --config-path "$ROOT/code_gen_exp/config" \
         --config-name "code-gen-swarm.yaml"; then
         echo_red ">> Swarm trainer exited with error. Restarting in 5 seconds... (Press Ctrl+C to stop)"
